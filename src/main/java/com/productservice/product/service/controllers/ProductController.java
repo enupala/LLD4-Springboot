@@ -31,7 +31,7 @@ public class ProductController {
         else
             return optionalProduct.get();
     }
-    @GetMapping("/serach")
+    @GetMapping("/search")
     public Product findByPrice(@RequestParam("price") Float price) {
         return productRepository.findByPrice(price);
     }
