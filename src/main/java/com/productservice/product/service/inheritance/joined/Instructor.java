@@ -1,14 +1,14 @@
-package com.productservice.product.service.inheritance.singletable;
+package com.productservice.product.service.inheritance.joined;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-@Entity(name="mp_instructor")
+@Entity(name="instructor")
 public class Instructor extends User {
 
     private float avgRating;
+
 }

@@ -9,7 +9,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name="products")
+
 public class Product extends BaseClass{
 
     private String image;

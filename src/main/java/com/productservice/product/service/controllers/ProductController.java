@@ -25,14 +25,11 @@ public class ProductController {
     @GetMapping("/products/search")
     public Product getProductByName(@RequestParam("name") String name)
     {
-        Optional<Product> optionalProduct=productRepository.findByName(name);
-        if(optionalProduct.isEmpty())
-        return null;
-        else
-            return optionalProduct.get();
+       return productRepository.findByName(name);
     }
     @GetMapping("/search")
     public Product findByPrice(@RequestParam("price") Float price) {
+
         return productRepository.findByPrice(price);
     }
 

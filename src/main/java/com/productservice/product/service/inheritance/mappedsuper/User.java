@@ -1,4 +1,4 @@
-package com.productservice.product.service.inheritance.singletable;
+package com.productservice.product.service.inheritance.mappedsuper;
 
 import jakarta.persistence.*;
 
