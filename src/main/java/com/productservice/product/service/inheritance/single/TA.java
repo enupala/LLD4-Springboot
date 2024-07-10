@@ -1,14 +1,15 @@
-package com.productservice.product.service.inheritance.joined;
+package com.productservice.product.service.inheritance.single;
 
+import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-import jakarta.persistence.PrimaryKeyJoinColumn;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-@PrimaryKeyJoinColumn(name="user_id")
-@Entity(name="ta")
+@Entity(name="s_ta")
+@DiscriminatorValue("1")
+
 public class TA extends User {
     private float avgRating;
     private int noOfSessions;

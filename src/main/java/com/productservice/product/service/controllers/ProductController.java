@@ -27,6 +27,11 @@ public class ProductController {
     {
        return productRepository.findByName(name);
     }
+    @GetMapping("/products/search/name")
+    public Product getProductByNameAndPrice(@RequestParam("name") String name,@RequestParam("price")Float price)
+    {
+        return productRepository.findByNameAndPrice(name,price);
+    }
     @GetMapping("/search")
     public Product findByPrice(@RequestParam("price") Float price) {
 
