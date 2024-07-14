@@ -5,20 +5,21 @@ import com.productservice.product.service.dtos.ProductResponseSelf;
 import com.productservice.product.service.exceptions.ProductNotPresentException;
 import com.productservice.product.service.models.Category;
 import com.productservice.product.service.models.Product;
+import com.productservice.product.service.repository.CategoryRepository;
 import com.productservice.product.service.repository.ProductRepository;
 import com.productservice.product.service.services.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 public class ProductController {
     @Autowired
     ProductRepository productRepository;
+    @Autowired
+    CategoryRepository categoryRepository;
     @Autowired
     IProductService productService;
 
@@ -36,6 +37,10 @@ public class ProductController {
     public Product findByPrice(@RequestParam("price") Float price) {
 
         return productRepository.findByPrice(price);
+    }
+    @GetMapping("/categories")
+    public List<Category>getCategories(){
+        return null;
     }
 
     @GetMapping("/products")
@@ -100,8 +105,10 @@ public class ProductController {
 
     }*/
 
+
     @GetMapping("/products/categories")
     public List<Category>getAllCategories(){
+
         return productService.getAllCategories();
     }
 

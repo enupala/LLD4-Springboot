@@ -142,7 +142,7 @@ public class IProductServiceImpl implements IProductService{
         product.setName(response.getTitle());
         product.setCategory(new Category());
         product.getCategory().setName(response.getCategory());
-        product.setDescription(response.getDescription());
+       product.setDescription(response.getDescription());
         return product;
 
     }
