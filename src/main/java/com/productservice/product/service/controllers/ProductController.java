@@ -13,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 public class ProductController {
@@ -45,7 +46,9 @@ public class ProductController {
 
     @GetMapping("/products")
     public List<Product> getAllProduct(){
-        return productService.getAllProduct();
+        return productService.getAllProduct()
+                .stream().filter(Product->Product.getName().startsWith("i")).
+                collect(Collectors.toList());
     }
 
     @GetMapping("/getSingleProduct/{id}")
