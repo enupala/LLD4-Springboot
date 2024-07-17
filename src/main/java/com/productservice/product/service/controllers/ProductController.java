@@ -17,20 +17,20 @@ import java.util.stream.Collectors;
 
 @RestController
 public class ProductController {
-    @Autowired
+   /* @Autowired
     ProductRepository productRepository;
     @Autowired
-    CategoryRepository categoryRepository;
+    CategoryRepository categoryRepository;*/
     @Autowired
     IProductService productService;
 
-    @GetMapping("/products/search")
+  /*  @GetMapping("/products/search")
     public Product getProductByName(@RequestParam("name") String name)
     {
        return productRepository.findByName(name);
     }
-    @GetMapping("/products/search/name")
-    public Product getProductByNameAndPrice(@RequestParam("name") String name,@RequestParam("price")Float price)
+    @GetMapping("/products/search/name")*/
+ /*   public Product getProductByNameAndPrice(@RequestParam("name") String name,@RequestParam("price")Float price)
     {
         return productRepository.findByNameAndPrice(name,price);
     }
@@ -38,7 +38,7 @@ public class ProductController {
     public Product findByPrice(@RequestParam("price") Float price) {
 
         return productRepository.findByPrice(price);
-    }
+    }*/
     @GetMapping("/categories")
     public List<Category>getCategories(){
         return null;
@@ -112,7 +112,8 @@ public class ProductController {
     @GetMapping("/products/categories")
     public List<Category>getAllCategories(){
 
-        return productService.getAllCategories();
+        return productService.getAllCategories().stream().filter(Category->Category.getName().startsWith("i"))
+                .collect(Collectors.toList());
     }
 
     @GetMapping("/products/category/{name}")

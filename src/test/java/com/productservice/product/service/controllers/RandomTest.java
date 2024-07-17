@@ -24,7 +24,7 @@ public class RandomTest
       //  int c=a+b;
         //assertion
        // assert c==13;//not giving much info about errors
-       // Assertions.assertTrue(c==138);//still not providing much info , jus telling whether its true/false, its not sufficient to a dev to debug the issue
+       // Assertions.assertTrue(c==138);//still not providing much info , jus telling whether its true/false, its not sufficient for a dev to debug the issue
       /* Assertions.assertEquals(13,c);//recommended way of using
        Assertions.assertThrows(NullPointerException.class,()->sample.add(a,b));//when we call this method then it has to be thrown nullpointer exception
         Assertions.assertNull(a);//means the object should be null
