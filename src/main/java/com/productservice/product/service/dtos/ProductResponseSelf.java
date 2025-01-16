@@ -7,10 +7,16 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
+//@AllArgsConstructor
 public class ProductResponseSelf {
 
     private Product product;
+
+    public ProductResponseSelf(Product product, String message) {
+        this.product = product;
+        this.message = message;
+    }
+
     private String message;
 }
 

@@ -63,6 +63,7 @@ public class ProductController {
         return new ResponseEntity<>(product,HttpStatus.OK);
     }
 
+
     @GetMapping("/getAProduct/{id}")
     public ResponseEntity<ProductResponseSelf> getAProduct(@PathVariable("id") Long id) throws ProductNotPresentException {
         Product product;
@@ -91,6 +92,7 @@ public class ProductController {
 
     @GetMapping("/getAProduct/exception/{id}")
     public ResponseEntity<ProductResponseSelf> getAProductException(@PathVariable("id") Long id) throws ProductNotPresentException {
+        System.out.println("product controller");
         Product product;
             product=productService.getAProductException(id);
 

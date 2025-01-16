@@ -30,6 +30,7 @@ public class IProductServiceImpl implements IProductService{
 /*
         RestTemplate restTemplate=new RestTemplate();
 */
+
         ProductResponseDto response = restTemplate.getForObject(
                 "https://fakestoreapi.com/products/" + id,
                 ProductResponseDto.class);
@@ -71,6 +72,7 @@ public class IProductServiceImpl implements IProductService{
 
     @Override
     public List<Product> getAllProduct() {
+        System.out.println("service IMPL");
         ProductResponseDto[] products = restTemplate.getForObject("https://fakestoreapi.com/products",
                 ProductResponseDto[].class);
         List<Product> output=new ArrayList<>();
