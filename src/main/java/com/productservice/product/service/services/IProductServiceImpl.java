@@ -136,7 +136,7 @@ public class IProductServiceImpl implements IProductService{
     }
 
 
-    private Product getProductsFromProductResponseDto(ProductResponseDto response) {
+    public Product getProductsFromProductResponseDto(ProductResponseDto response) {
         Product product=new Product();
         product.setId(response.getId());
         product.setImage(response.getImage());
